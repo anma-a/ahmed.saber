@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Saber Saad — HSE Senior Coordinator</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d1117;--bg2:#161b22;--card:rgba(22,27,34,0.95);--text:#e6edf3;--muted:#8b949e;--border:rgba(255,255,255,0.09);--item:rgba(255,255,255,0.04);--nav:rgba(13,17,23,0.88);--green:#1E7F4F;--gdark:#155c38;--gglow:rgba(30,127,79,0.18);--accent:#f0b429;--grid:rgba(30,127,79,0.05);--shadow:0 2px 20px rgba(0,0,0,0.4);--hgrad:linear-gradient(130deg,#ffffff 20%,#1E7F4F 100%)}
+.light{--bg:#f2f5f2;--bg2:#ffffff;--card:rgba(255,255,255,0.98);--text:#111827;--muted:#4b5563;--border:rgba(0,0,0,0.1);--item:rgba(0,0,0,0.04);--nav:rgba(242,245,242,0.92);--gglow:rgba(30,127,79,0.1);--grid:rgba(30,127,79,0.06);--shadow:0 2px 16px rgba(0,0,0,0.09);--hgrad:linear-gradient(130deg,#0f172a 20%,#1E7F4F 100%)}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .35s,color .35s}
+.gbg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:60px 60px}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(70px)}
+.o1{width:480px;height:480px;background:rgba(30,127,79,0.13);top:-120px;right:-120px;animation:fl 14s ease-in-out infinite}
+.o2{width:360px;height:360px;background:rgba(240,180,41,0.07);bottom:160px;left:-140px;animation:fl 18s ease-in-out infinite reverse}
+@keyframes fl{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-18px)}}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:var(--nav);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;transition:background .35s}
+.nbrand{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--green)}
+.nlinks{display:flex;gap:22px}
+.nlinks a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.nlinks a:hover{color:var(--green)}
+#tBtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--muted)}
+#tBtn:hover{border-color:var(--green);background:var(--gglow)}
+@media(max-width:640px){.nlinks{display:none}}
+
+/* ── LAYOUT ── */
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 20px 80px}
+
+/* ── HERO ── */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 20px 56px}
+.aring{position:relative;width:158px;height:158px;margin-bottom:28px}
+.aring::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(#1E7F4F,#f0b429,#155c38,#1E7F4F);animation:sp 7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ainner{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;background:var(--bg2);border:3px solid var(--bg);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:50px;font-weight:800;color:#1E7F4F}
+.ainner img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.abadge{position:absolute;bottom:8px;right:6px;z-index:2;background:#1E7F4F;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;border:2px solid var(--bg);animation:pu 2.2s ease-in-out infinite;letter-spacing:.3px}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 rgba(30,127,79,.6)}55%{box-shadow:0 0 0 7px rgba(30,127,79,0)}}
+.hname{font-family:'Outfit',sans-serif;font-size:clamp(30px,6vw,54px);font-weight:800;letter-spacing:-1px;line-height:1.1;background:var(--hgrad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.htitle{font-size:17px;color:#1E7F4F;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:8px}
+.htag{font-size:14px;color:var(--muted);margin-top:14px;max-width:460px;line-height:1.75}
+.stats{display:flex;gap:36px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.stat{text-align:center}
+.snum{font-family:'Outfit',sans-serif;font-size:30px;font-weight:800;color:#1E7F4F;display:block;line-height:1}
+.slbl{font-size:11px;color:var(--muted);margin-top:5px;display:block;letter-spacing:.4px}
+.acts{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .2s;font-family:'Space Grotesk',sans-serif}
+.bprim{background:#1E7F4F;color:#fff}
+.bprim:hover{background:#155c38;transform:translateY(-2px);box-shadow:0 8px 22px rgba(30,127,79,.38)}
+.bhire{background:linear-gradient(135deg,#f0b429,#e09010);color:#fff}
+.bhire:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(240,180,41,.4)}
+.bout{background:transparent;color:var(--text);border:1px solid var(--border)}
+.bout:hover{border-color:#1E7F4F;color:#1E7F4F;transform:translateY(-2px)}
+.bpr{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.bpr:hover{border-color:#f0b429;color:#f0b429;transform:translateY(-2px)}
+
+/* ── CARD ── */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 28px;backdrop-filter:blur(10px);margin-bottom:20px;box-shadow:var(--shadow);transition:border-color .2s,background .35s}
+.card:hover{border-color:rgba(30,127,79,.28)}
+.stitle{font-family:'Outfit',sans-serif;font-size:21px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:11px;margin-bottom:22px}
+.stitle::before{content:'';width:4px;height:22px;background:#1E7F4F;border-radius:4px;flex-shrink:0}
+.stag{font-size:10px;font-weight:600;background:var(--gglow);color:#1E7F4F;padding:3px 9px;border-radius:20px;border:1px solid rgba(30,127,79,.28);letter-spacing:.8px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
+
+/* ── MARQUEE ── */
+.mq-section{margin-bottom:20px;position:relative;z-index:1}
+.mq-label{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;text-align:center;margin-bottom:10px;opacity:.75}
+.mq-wrap{overflow:hidden;position:relative;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 0;box-shadow:var(--shadow)}
+.mq-wrap::before,.mq-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.mq-wrap::before{left:0;background:linear-gradient(to right,var(--card),transparent)}
+.mq-wrap::after{right:0;background:linear-gradient(to left,var(--card),transparent)}
+.mq-track{display:flex;width:max-content;animation:mqs 38s linear infinite}
+.mq-track.rev{animation-direction:reverse;animation-duration:44s}
+.mq-track:hover{animation-play-state:paused}
+@keyframes mqs{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mq-item{display:flex;align-items:center;gap:10px;padding:7px 20px;white-space:nowrap;border-right:1px solid var(--border);cursor:default}
+.mq-logo{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:1px solid var(--border)}
+.mq-logo img{width:100%;height:100%;object-fit:contain;border-radius:8px}
+.mq-logo .fallback{font-size:18px;line-height:1}
+.mq-body{display:flex;flex-direction:column}
+.mq-name{font-size:13px;font-weight:600;color:var(--text)}
+.mq-sub{font-size:10px;color:var(--muted)}
+/* cert marquee tint */
+.mq-cert .mq-logo{background:rgba(30,127,79,.1);border-color:rgba(30,127,79,.2)}
+/* company marquee tint */
+.mq-comp .mq-logo{background:rgba(240,180,41,.09);border-color:rgba(240,180,41,.2)}
+
+/* ── CONTACT ── */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}
+.citem{display:flex;align-items:center;gap:11px;padding:13px 15px;background:var(--item);border:1px solid var(--border);border-radius:13px;text-decoration:none;color:var(--text);transition:all .2s;min-width:0}
+.citem:hover{border-color:#1E7F4F;background:var(--gglow);color:#1E7F4F;transform:translateY(-2px)}
+.cicon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.ctxt{display:flex;flex-direction:column;min-width:0;flex:1}
+.clbl{font-size:10px;color:var(--muted);white-space:nowrap}
+.cval{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fbadge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;width:fit-content;margin-bottom:3px}
+.fksa{background:rgba(0,120,60,.15);color:#009940;border:1px solid rgba(0,150,60,.25)}
+.fegy{background:rgba(206,17,38,.12);color:#ce1126;border:1px solid rgba(206,17,38,.22)}
+.cfull{grid-column:1/-1}
+
+/* ── SKILLS ── */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+@media(max-width:580px){.sgrid{grid-template-columns:1fr}}
+.sh{display:flex;justify-content:space-between;margin-bottom:7px;font-size:14px;font-weight:500}
+.spct{color:#1E7F4F;font-weight:700;font-family:'Outfit',sans-serif}
+.sbar{height:6px;background:rgba(128,128,128,.18);border-radius:6px;overflow:hidden;margin-bottom:16px}
+.sfill{height:100%;background:linear-gradient(90deg,#1E7F4F,#f0b429);border-radius:6px;width:0;transition:width 1.3s cubic-bezier(.23,1,.32,1)}
+
+/* ── CERTIFICATES SECTION ── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.cert-card{display:flex;align-items:flex-start;gap:13px;padding:14px 16px;background:var(--item);border:1px solid var(--border);border-radius:13px;transition:all .2s}
+.cert-card:hover{border-color:rgba(30,127,79,.35);background:var(--gglow);transform:translateY(-2px)}
+.cert-logo-wrap{width:46px;height:46px;border-radius:11px;background:rgba(30,127,79,.1);border:1px solid rgba(30,127,79,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;font-size:22px}
+/* =====================================================================
+   CERT LOGO PLACEHOLDER — replace the emoji with an <img> tag per cert
+   Example: <img src="URL_TO_NEBOSH_LOGO" style="width:100%;height:100%;object-fit:contain">
+   ===================================================================== */
+.cert-logo-wrap img{width:100%;height:100%;object-fit:contain;border-radius:9px}
+.cert-info{flex:1;min-width:0}
+.cert-name{font-size:13px;font-weight:700;color:var(--text);font-family:'Outfit',sans-serif;line-height:1.3}
+.cert-issuer{font-size:11px;color:var(--muted);margin-top:3px}
+.cert-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;margin-top:6px;background:rgba(30,127,79,.14);color:#1E7F4F;border:1px solid rgba(30,127,79,.25)}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:9px;top:4px;bottom:4px;width:1px;background:linear-gradient(to bottom,#1E7F4F,transparent)}
+.ti{position:relative;margin-bottom:28px}
+.tdot{position:absolute;left:-25px;top:5px;width:12px;height:12px;border-radius:50%;background:#1E7F4F;border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(30,127,79,.25)}
+.tdot.maj{width:15px;height:15px;left:-26px;background:#f0b429;box-shadow:0 0 0 3px rgba(240,180,41,.25)}
+.tyr{font-size:11px;color:#1E7F4F;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:5px;font-family:'Outfit',sans-serif}
+.ttl{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;font-family:'Outfit',sans-serif}
+.tsub{font-size:13px;color:var(--muted);line-height:1.65}
+/* Company logo inside timeline */
+.tl-company{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.tl-logo{width:32px;height:32px;border-radius:7px;background:var(--item);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:16px;flex-shrink:0}
+/* =====================================================================
+   COMPANY LOGO PLACEHOLDER in Timeline — per entry below:
+   Replace emoji with: <img src="COMPANY_LOGO_URL" style="width:100%;height:100%;object-fit:contain">
+   ===================================================================== */
+.tl-logo img{width:100%;height:100%;object-fit:contain;border-radius:6px}
+.tl-company-name{font-size:12px;font-weight:600;color:var(--muted)}
+.tbg{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin-top:7px;margin-right:5px}
+.bh{background:rgba(30,127,79,.14);color:#1E7F4F;border:1px solid rgba(30,127,79,.28)}
+.bl{background:rgba(240,180,41,.12);color:#f0b429;border:1px solid rgba(240,180,41,.28)}
+
+/* ── PROJECTS ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.pcard{background:var(--item);border:1px solid var(--border);border-radius:13px;padding:18px;transition:all .3s;position:relative;overflow:hidden}
+.pcard::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1E7F4F,#f0b429);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pcard:hover{border-color:rgba(30,127,79,.3);transform:translateY(-3px)}
+.pcard:hover::after{transform:scaleX(1)}
+.pico{font-size:26px;margin-bottom:10px}
+.pname{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;font-family:'Outfit',sans-serif}
+.pnum{font-size:21px;font-weight:800;color:#1E7F4F;font-family:'Outfit',sans-serif;line-height:1}
+.psub{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* ── COMPETENCIES ── */
+.ctags{display:flex;flex-wrap:wrap;gap:9px}
+.ctag{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;background:var(--item);border:1px solid var(--border);color:var(--muted);transition:all .18s;cursor:default}
+.ctag:hover{background:var(--gglow);border-color:rgba(30,127,79,.35);color:#1E7F4F;transform:translateY(-2px)}
+
+/* ── DOWNLOADS ── */
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.dgrid{grid-template-columns:1fr}}
+.dcard{display:flex;align-items:center;gap:14px;padding:18px;background:var(--item);border:1px solid var(--border);border-radius:13px;text-decoration:none;color:var(--text);transition:all .2s}
+.dcard:hover{border-color:#1E7F4F;background:var(--gglow);transform:translateY(-3px)}
+.dico{width:46px;height:46px;border-radius:11px;background:var(--gglow);border:1px solid rgba(30,127,79,.28);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+.dtitle{font-size:14px;font-weight:700;font-family:'Outfit',sans-serif}
+.dsub{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ── BACK TO TOP ── */
+.btt{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#1E7F4F;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:1000;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 4px 16px rgba(0,0,0,.3);font-size:18px}
+.btt.show{opacity:1;visibility:visible}
+.btt:hover{background:#155c38;transform:translateY(-4px)}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:36px 20px;border-top:1px solid var(--border);margin-top:60px;color:var(--muted);font-size:13px}
+.flinks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.flinks a{color:var(--muted);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:#1E7F4F}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media print{.gbg,.o1,.o2,nav,.acts,.btt,.mq-section{display:none}body{background:#fff;color:#000}.card{box-shadow:none;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+<div class="gbg"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+
+<!-- ══════════════════════════════════════
+     NAV — added #certificates link
+     ══════════════════════════════════════ -->
+<nav>
+  <div class="nbrand">&#x2B21; Ahmed Saber &middot; HSE</div>
+  <div class="nlinks">
+    <a href="#contact">Contact</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#downloads">Downloads</a>
+  </div>
+  <button id="tBtn">&#x1F319;</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="aring">
+    <div class="ainner">
+      <img src="https://raw.githubusercontent.com/mido01020/ahmedsaber.github.io/main/ME.png" alt="Ahmed" onerror="this.style.display='none'">
+    </div>
+    <div class="abadge">&#x25CF; AVAILABLE</div>
+  </div>
+  <h1 class="hname">Ahmed Saber Saad</h1>
+  <div class="htitle">HSE Senior Coordinator</div>
+  <p class="htag">Precision in Safety Management &mdash; Driven by Data, Guided by Standards.<br>17+ years safeguarding major industrial &amp; construction projects across Egypt and Saudi Arabia.</p>
+  <div class="stats">
+    <div class="stat"><span class="snum" id="c1">0</span><span class="slbl">Years Experience</span></div>
+    <div class="stat"><span class="snum" id="c2">0</span><span class="slbl">Safe Hours</span></div>
+    <div class="stat"><span class="snum" id="c3">0</span><span class="slbl">Major Projects</span></div>
+    <div class="stat"><span class="snum" id="c4">0 LTI</span><span class="slbl">Lost Time Incidents</span></div>
+  </div>
+  <div class="acts">
+    <a href="https://raw.githubusercontent.com/mido01020/mido01020.github.io/main/Ahmed%20Saber%202026.pdf" class="btn bprim" target="_blank">&#x1F4C4; Download CV</a>
+    <a href="mailto:Ahmed.hse@live.com" class="btn bhire">&#x1F91D; Hire Me</a>
+    <a href="https://raw.githubusercontent.com/mido01020/mido01020.github.io/main/Certificates.pdf" class="btn bout" target="_blank">&#x1F3C5; Certificates</a>
+    <button class="btn bpr" onclick="window.print()">&#x1F5A8; Print</button>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="card rv">
+  <div class="stitle">Contact <span class="stag">Quick Connect</span></div>
+  <div class="cgrid">
+    <a href="tel:+966544574813" class="citem">
+      <div class="cicon" style="background:rgba(30,127,79,.13)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1E7F4F"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.18 21 3 13.82 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.23 1.01L6.6 10.8z"/></svg></div>
+      <div class="ctxt"><span class="fbadge fksa">&#x1F1F8;&#x1F1E6; Saudi Arabia</span><span class="cval">+966 544 574 813</span></div>
+    </a>
+    <a href="https://wa.me/966544574813" class="citem" target="_blank">
+      <div class="cicon" style="background:rgba(37,211,102,.13)"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="ctxt"><span class="fbadge fksa">&#x1F1F8;&#x1F1E6; WhatsApp</span><span class="cval">+966 544 574 813</span></div>
+    </a>
+    <a href="tel:+201101001477" class="citem">
+      <div class="cicon" style="background:rgba(30,127,79,.13)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1E7F4F"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.18 21 3 13.82 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.23 1.01L6.6 10.8z"/></svg></div>
+      <div class="ctxt"><span class="fbadge fegy">&#x1F1EA;&#x1F1EC; Egypt</span><span class="cval">+20 110 100 1477</span></div>
+    </a>
+    <a href="https://wa.me/201101001477" class="citem" target="_blank">
+      <div class="cicon" style="background:rgba(37,211,102,.13)"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="ctxt"><span class="fbadge fegy">&#x1F1EA;&#x1F1EC; WhatsApp</span><span class="cval">+20 110 100 1477</span></div>
+    </a>
+    <a href="mailto:Ahmed.hse@live.com" class="citem">
+      <div class="cicon" style="background:rgba(0,120,212,.13)"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="#0078d4"/><path d="M2 8l10 6 10-6" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="ctxt"><span class="clbl">Outlook &mdash; Primary</span><span class="cval">Ahmed.hse@live.com</span></div>
+    </a>
+    <a href="mailto:Ahmed.saber800@gmail.com" class="citem">
+      <div class="cicon" style="background:rgba(234,67,53,.13)"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6z" fill="white" stroke="#e0e0e0" stroke-width=".5"/><path d="M2 6l10 7 10-7" stroke="#EA4335" stroke-width="2" fill="none"/><text x="12" y="15" text-anchor="middle" font-size="7" font-weight="bold" fill="#4285F4" font-family="Arial,sans-serif">G</text></svg></div>
+      <div class="ctxt"><span class="clbl">Gmail &mdash; Secondary</span><span class="cval">Ahmed.saber800@gmail.com</span></div>
+    </a>
+    <a href="https://www.linkedin.com/in/AhmedSaber122" class="citem cfull" target="_blank">
+      <div class="cicon" style="background:rgba(10,102,194,.13)"><svg width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M8 10H6v8h2v-8zm-1-4a1.2 1.2 0 100 2.4A1.2 1.2 0 007 6zm4 4v8h2v-4c0-.8.4-2 1.5-2S16 10.8 16 12v6h2v-5c0-2.5-1.5-3.5-3-3.5-1.2 0-1.8.6-2 1v-1h-2z" fill="white"/></svg></div>
+      <div class="ctxt"><span class="clbl">LinkedIn Profile</span><span class="cval">linkedin.com/in/AhmedSaber122</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ SUMMARY ══ -->
+<section class="card rv" style="transition-delay:.08s">
+  <div class="stitle">Professional Summary</div>
+  <p style="color:var(--muted);line-height:1.82;font-size:15px">HSE professional with over <strong style="color:#1E7F4F">15 years of continuous experience since 2008</strong> in industrial loss prevention, and in the management of Health, Safety, and Environmental systems across major construction projects, commissioning phases, start-up activities, and the operation of large industrial facilities and power plants. Proven track record achieving millions of safe manhours with <strong style="color:#1E7F4F">zero lost-time incidents</strong>.</p>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills" class="card rv" style="transition-delay:.12s">
+  <div class="stitle">Core Skills <span class="stag">Proficiency</span></div>
+  <div class="sgrid">
+    <div>
+      <div class="sh"><span>Risk Assessment &amp; ARA</span><span class="spct">96%</span></div><div class="sbar"><div class="sfill" data-w="96"></div></div>
+      <div class="sh"><span>PTW Systems</span><span class="spct">95%</span></div><div class="sbar"><div class="sfill" data-w="95"></div></div>
+      <div class="sh"><span>ISO 45001 / 14001</span><span class="spct">90%</span></div><div class="sbar"><div class="sfill" data-w="90"></div></div>
+      <div class="sh"><span>Emergency Response</span><span class="spct">93%</span></div><div class="sbar" style="margin-bottom:0"><div class="sfill" data-w="93"></div></div>
+    </div>
+    <div>
+      <div class="sh"><span>Industrial Hygiene</span><span class="spct">88%</span></div><div class="sbar"><div class="sfill" data-w="88"></div></div>
+      <div class="sh"><span>Scaffolding Inspection</span><span class="spct">91%</span></div><div class="sbar"><div class="sfill" data-w="91"></div></div>
+      <div class="sh"><span>Environmental Mgmt</span><span class="spct">85%</span></div><div class="sbar"><div class="sfill" data-w="85"></div></div>
+      <div class="sh"><span>HSE Leadership</span><span class="spct">94%</span></div><div class="sbar" style="margin-bottom:0"><div class="sfill" data-w="94"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CERTIFICATES MARQUEE — placed above Certificates section
+     ══════════════════════════════════════════════════ -->
+<div class="mq-section rv" style="transition-delay:.15s">
+  <div class="mq-label">&#x1F393; Certificates &amp; Qualifications</div>
+  <div class="mq-wrap">
+    <div class="mq-track mq-cert" id="certTrack"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     NEW: CERTIFICATES SECTION
+     ══════════════════════════════════════════════════ -->
+<section id="certificates" class="card rv" style="transition-delay:.17s">
+  <div class="stitle">Certificates &amp; Qualifications <span class="stag">14 Certificates</span></div>
+  <div class="cert-grid">
+
+    <!-- ─── CERT 1: NEBOSH IGC ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- NEBOSH LOGO PLACEHOLDER:
+             Replace emoji with: <img src="NEBOSH_LOGO_URL" ...>
+             Logo URL source: https://www.nebosh.org.uk  -->
+        &#x1F393;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">NEBOSH IGC</div>
+        <div class="cert-issuer">National Examination Board in Occupational Safety &amp; Health</div>
+        <span class="cert-badge">International General Certificate</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 2: ISO 14001 ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- ISO LOGO PLACEHOLDER:
+             Replace emoji with: <img src="ISO_LOGO_URL" ...>
+             Logo URL source: https://www.iso.org -->
+        &#x1F30F;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">ISO 14001:2004</div>
+        <div class="cert-issuer">International Organization for Standardization</div>
+        <span class="cert-badge">Environmental Management System</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 3: OSHA Construction ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- OSHA LOGO PLACEHOLDER:
+             Replace emoji with: <img src="OSHA_LOGO_URL" ...>
+             Logo URL source: https://www.osha.gov -->
+        &#x1F3D7;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">OSHA Construction Industry</div>
+        <div class="cert-issuer">Occupational Safety and Health Administration</div>
+        <span class="cert-badge">29 CFR 1926 Safety &amp; Health</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 4: OSHA General Industry ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- OSHA LOGO PLACEHOLDER (same as above) -->
+        &#x1F3ED;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">OSHA General Industry</div>
+        <div class="cert-issuer">Occupational Safety and Health Administration</div>
+        <span class="cert-badge">29 CFR 1910 Safety &amp; Health</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 5: First Aid & BLS ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- RED CRESCENT LOGO PLACEHOLDER:
+             Replace emoji with: <img src="RED_CRESCENT_LOGO_URL" ...>
+             Logo URL source: https://www.rcrc-resilience-southeastasia.org or local Egyptian Red Crescent -->
+        &#x1F6A8;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">Basic Life Support &amp; First Aid</div>
+        <div class="cert-issuer">Egyptian Red Crescent</div>
+        <span class="cert-badge">BLS Certified</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 6: HAZMAT ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- HUMANSOFT LOGO PLACEHOLDER:
+             Replace emoji with: <img src="HUMANSOFT_LOGO_URL" ...> -->
+        &#x2622;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">HAZMAT Training</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 7: Hazard Communication ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- HUMANSOFT LOGO PLACEHOLDER (same) -->
+        &#x26A0;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">Hazard Communication</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 8: Scaffolding Safety ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap"><!-- HUMANSOFT LOGO PLACEHOLDER -->&#x1F3D7;</div>
+      <div class="cert-info">
+        <div class="cert-name">Scaffolding Safety</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 9: Electrical Safety ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap"><!-- HUMANSOFT LOGO PLACEHOLDER -->&#x26A1;</div>
+      <div class="cert-info">
+        <div class="cert-name">Electrical Safety</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 10: Fire Safety ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap"><!-- HUMANSOFT LOGO PLACEHOLDER -->&#x1F525;</div>
+      <div class="cert-info">
+        <div class="cert-name">Fire Safety in the Workplace</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 11: Confined Spaces ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap"><!-- HUMANSOFT LOGO PLACEHOLDER -->&#x1F573;</div>
+      <div class="cert-info">
+        <div class="cert-name">Confined Spaces Entry</div>
+        <div class="cert-issuer">Humansoft Learning Solutions — Kharafi National</div>
+        <span class="cert-badge">Industrial Safety</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 12: Psychological Support ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- RED CRESCENT LOGO PLACEHOLDER (same as cert 5) -->
+        &#x1F9E0;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">Psychological Support — Crisis</div>
+        <div class="cert-issuer">Egyptian Red Crescent</div>
+        <span class="cert-badge">Crisis &amp; Mental Health</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 13: Risk Management ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- RISK MANAGEMENT LOGO PLACEHOLDER:
+             Replace emoji with issuing body logo -->
+        &#x1F4CA;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">Risk Management</div>
+        <div class="cert-issuer">Professional Certificate</div>
+        <span class="cert-badge">Risk Management</span>
+      </div>
+    </div>
+
+    <!-- ─── CERT 14: OSH Advanced Diploma ─── -->
+    <div class="cert-card">
+      <div class="cert-logo-wrap">
+        <!-- IASP LOGO PLACEHOLDER:
+             Replace emoji with: <img src="IASP_LOGO_URL" ...>
+             Issuer: International Association of Safety Professionals -->
+        &#x1F6E1;
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">OSH Advanced Diploma</div>
+        <div class="cert-issuer">IASP — International Association of Safety Professionals</div>
+        <span class="cert-badge">Occupational Safety &amp; Health</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     COMPANIES MARQUEE — placed above Career Timeline
+     ══════════════════════════════════════════════════ -->
+<div class="mq-section rv" style="transition-delay:.19s">
+  <div class="mq-label">&#x1F3E2; Companies &amp; Projects</div>
+  <div class="mq-wrap">
+    <div class="mq-track rev mq-comp" id="compTrack"></div>
+  </div>
+</div>
+
+<!-- ══ TIMELINE ══ -->
+<section id="experience" class="card rv" style="transition-delay:.21s">
+  <div class="stitle">Career Timeline <span class="stag">2007 &mdash; Present</span></div>
+  <div class="tl">
+
+    <!-- ── Entry 1: DMC ── -->
+    <div class="ti">
+      <div class="tdot maj"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- DMC LOGO PLACEHOLDER:
+               Replace emoji with: <img src="DMC_LOGO_URL" style="width:100%;height:100%;object-fit:contain">
+               LinkedIn: https://www.linkedin.com/company/dmc-curve/ -->
+          &#x1F3D9;
+        </div>
+        <span class="tl-company-name">Dar Al-Mimar Co. (DMC)</span>
+      </div>
+      <div class="tyr">12/2019 &mdash; 03/2026 &middot; Present</div>
+      <div class="ttl">HSE Senior Coordinator</div>
+      <div class="tsub">New Cairo, Egypt &mdash; Project: Mountain View I-City New Cairo<br>Led safety compliance across construction, infrastructure, and finishing activities for DMC flagship residential &amp; commercial development. Also provided HSE support to additional DMC projects.</div>
+      <span class="tbg bh">&#x2713; 10,000,000 Safe Hours</span><span class="tbg bl">&#x1F4CD; New Cairo, Egypt</span>
+    </div>
+
+    <!-- ── Entry 2: CCC & Hassan Allam ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- CCC & HASSAN ALLAM LOGO PLACEHOLDER:
+               Two companies — suggest using CCC logo or a merged badge
+               CCC LinkedIn: https://www.linkedin.com/company/consolidated-contractors-company/
+               Hassan Allam LinkedIn: https://www.linkedin.com/company/hassan-allam-holding/ -->
+          &#x1F91D;
+        </div>
+        <span class="tl-company-name">CCC &amp; Hassan Allam Sons (JV)</span>
+      </div>
+      <div class="tyr">08/2018 &mdash; 12/2019</div>
+      <div class="ttl">HSE Coordinator</div>
+      <div class="tsub">New Cairo, Egypt &mdash; Project: Mivida Mixed-Use Boulevard<br>Ensured full HSE compliance across major mixed-use development for Hassan Allam &amp; CCC joint venture.</div>
+      <span class="tbg bh">&#x2713; 1,000,000 Safe Hours</span><span class="tbg bl">&#x1F4CD; New Cairo, Egypt</span>
+    </div>
+
+    <!-- ── Entry 3: Albayan / Taqah ── -->
+    <div class="ti">
+      <div class="tdot maj"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- ALBAYAN / TAQAH LOGO PLACEHOLDER:
+               Replace emoji with company logo URL -->
+          &#x1F1F8;&#x1F1E6;
+        </div>
+        <span class="tl-company-name">Albayan Holding Group (Taqah)</span>
+      </div>
+      <div class="tyr">01/2015 &mdash; 06/2018</div>
+      <div class="ttl">HSE Senior Supervisor</div>
+      <div class="tsub">Riyadh, Saudi Arabia &mdash; Project: Al Kharj Road Sewage Treatment Plant – Phase III<br>Oversaw civil, mechanical, and operational safety across major KSA infrastructure project.</div>
+      <span class="tbg bh">&#x2713; 5,000,000 Safe Hours</span><span class="tbg bl">&#x1F4CD; Al Kharj, KSA</span>
+    </div>
+
+    <!-- ── Entry 4: Concorde Ready Mix ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- CONCORDE READY MIX LOGO PLACEHOLDER -->
+          &#x1F9F1;
+        </div>
+        <span class="tl-company-name">Concorde Ready Mix Concrete Co.</span>
+      </div>
+      <div class="tyr">06/2013 &mdash; 01/2015</div>
+      <div class="ttl">HSE Supervisor</div>
+      <div class="tsub">6th of October City, Giza, Egypt &mdash; Project: Mall of Egypt<br>Supervised all HSE activities at the ready-mix concrete batching plant including equipment operation, material handling, and plant logistics.</div>
+      <span class="tbg bl">&#x1F4CD; Giza, Egypt</span>
+    </div>
+
+    <!-- ── Entry 5: Suez Steel ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- SUEZ STEEL LOGO PLACEHOLDER:
+               LinkedIn: https://www.linkedin.com/company/suez-steel-company/ -->
+          &#x1F3ED;
+        </div>
+        <span class="tl-company-name">Suez Steel Company</span>
+      </div>
+      <div class="tyr">08/2012 &mdash; 05/2013</div>
+      <div class="ttl">HSE Supervisor</div>
+      <div class="tsub">Suez City, Egypt &mdash; Project: Suez Steel New Phase<br>Managed PTW systems across high-rise-equivalent industrial structures (DRI Tower 80–110m, furnace chimneys 50–70m, melting trusses 35–45m).</div>
+      <span class="tbg bl">&#x1F4CD; Suez, Egypt</span>
+    </div>
+
+    <!-- ── Entry 6: Kharafi National ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- KHARAFI NATIONAL LOGO PLACEHOLDER:
+               LinkedIn: https://www.linkedin.com/company/kharafi-national/ -->
+          &#x26A1;
+        </div>
+        <span class="tl-company-name">Kharafi National</span>
+      </div>
+      <div class="tyr">01/2011 &mdash; 08/2012</div>
+      <div class="ttl">HSE Officer</div>
+      <div class="tsub">Damietta City, Egypt &mdash; Projects: Damietta Power Plant (500 MW) &amp; West Damietta Power Plant (500 MW)<br>Served as safety consultant across two major power plant projects managing PTW, heavy equipment inspection, and scaffolding compliance.</div>
+      <span class="tbg bl">&#x1F4CD; Damietta, Egypt</span>
+    </div>
+
+    <!-- ── Entry 7: ARCONS Abu Qir ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- ARCONS LOGO PLACEHOLDER:
+               LinkedIn: https://www.linkedin.com/company/arab-contracting/ -->
+          &#x1F3DB;
+        </div>
+        <span class="tl-company-name">Arab Contracting Co. (ARCONS)</span>
+      </div>
+      <div class="tyr">01/2010 &mdash; 01/2011</div>
+      <div class="ttl">HSE Supervisor</div>
+      <div class="tsub">Alexandria, Egypt &mdash; Project: Abu Qir Thermal Power Plant (Units 6 &amp; 7 – CP102)<br>Supervised safety across thermal power plant expansion including boiler units, chimneys, turbine buildings, and heavy-equipment zones.</div>
+      <span class="tbg bl">&#x1F4CD; Alexandria, Egypt</span>
+    </div>
+
+    <!-- ── Entry 8: Orascom ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- ORASCOM LOGO PLACEHOLDER:
+               LinkedIn: https://www.linkedin.com/company/orascom-construction-plc/ -->
+          &#x1F3E6;
+        </div>
+        <span class="tl-company-name">Orascom Construction Industries</span>
+      </div>
+      <div class="tyr">09/2008 &mdash; 01/2010</div>
+      <div class="ttl">HSE Supervisor</div>
+      <div class="tsub">New Cairo, Egypt &mdash; Projects: BNP Paribas Bank &amp; Housing &amp; Development Bank<br>Supervised HSE across two major commercial banking construction projects including data centers, technical rooms, and multi-floor office structures.</div>
+      <span class="tbg bl">&#x1F4CD; New Cairo, Egypt</span>
+    </div>
+
+    <!-- ── Entry 9: ARCONS (Saint Gobain + El-Kureimat) ── -->
+    <div class="ti">
+      <div class="tdot"></div>
+      <div class="tl-company">
+        <div class="tl-logo">
+          <!-- ARCONS LOGO PLACEHOLDER (same as entry 7) -->
+          &#x1F3DB;
+        </div>
+        <!-- Two projects merged: Saint Gobain + El-Kureimat under ARCONS -->
+        <span class="tl-company-name">Arab Contracting Co. (ARCONS)</span>
+      </div>
+      <div class="tyr">01/2007 &mdash; 09/2008</div>
+      <div class="ttl">HSE Officer</div>
+      <div class="tsub">Egypt &mdash; <strong style="color:var(--text)">Two Projects:</strong><br>
+        &#x2022; Saint Gobain Glass Factory — Ain El Sokhna<br>
+        &#x2022; El-Kureimat Power Station III (CP105) — Beni Suef<br>
+        Managed HSE across two major industrial/power plant projects with high-elevation structures.
+      </div>
+      <span class="tbg bl">&#x1F4CD; Ain El Sokhna &amp; Beni Suef</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects" class="card rv" style="transition-delay:.24s">
+  <div class="stitle">Major Projects <span class="stag">Milestones</span></div>
+  <div class="pgrid">
+    <div class="pcard"><div class="pico">&#x1F3D9;</div><div class="pname">Mountain View I-City</div><div class="pnum">10,000,000</div><div class="psub">Safe Manhours &mdash; New Cairo</div></div>
+    <div class="pcard"><div class="pico">&#x1F6B0;</div><div class="pname">Al Kharj STP</div><div class="pnum">5,000,000</div><div class="psub">Safe Manhours &mdash; Saudi Arabia</div></div>
+    <div class="pcard"><div class="pico">&#x1F3D7;</div><div class="pname">Mivida Boulevard</div><div class="pnum">1,000,000</div><div class="psub">Safe Manhours &mdash; New Cairo</div></div>
+    <div class="pcard"><div class="pico">&#x26A1;</div><div class="pname">Damietta Power Plants</div><div class="pnum">2 &times; 500MW</div><div class="psub">Power Plants &mdash; Damietta</div></div>
+    <div class="pcard"><div class="pico">&#x1F3ED;</div><div class="pname">Suez Steel</div><div class="pnum">High-Rise</div><div class="psub">Industrial Structures &mdash; Suez</div></div>
+    <div class="pcard"><div class="pico">&#x1F3E6;</div><div class="pname">BNP Paribas &amp; HDB</div><div class="pnum">Twin Banks</div><div class="psub">Commercial Construction &mdash; Cairo</div></div>
+  </div>
+</section>
+
+<!-- ══ COMPETENCIES ══ -->
+<section class="card rv" style="transition-delay:.27s">
+  <div class="stitle">Core Competencies</div>
+  <div class="ctags">
+    <span class="ctag">PTW Systems</span><span class="ctag">Risk Assessment</span><span class="ctag">ARA</span><span class="ctag">Emergency Response</span><span class="ctag">ISO 45001</span><span class="ctag">ISO 14001</span><span class="ctag">Heavy Equipment</span><span class="ctag">Scaffolding</span><span class="ctag">Industrial Hygiene</span><span class="ctag">Environmental Mgmt</span><span class="ctag">HSE Leadership</span><span class="ctag">Incident Investigation</span><span class="ctag">Toolbox Talks</span><span class="ctag">LOTO Procedures</span><span class="ctag">Confined Space</span><span class="ctag">Working at Height</span><span class="ctag">MSDS Management</span><span class="ctag">Ergonomics</span><span class="ctag">Psychological Safety</span><span class="ctag">Waste Management</span>
+  </div>
+</section>
+
+<!-- ══ DOWNLOADS ══ -->
+<section id="downloads" class="card rv" style="transition-delay:.30s">
+  <div class="stitle">Downloads <span class="stag">Documents</span></div>
+  <div class="dgrid">
+    <a href="https://raw.githubusercontent.com/mido01020/mido01020.github.io/main/Ahmed%20Saber%202026.pdf" class="dcard" target="_blank"><div class="dico">&#x1F4C4;</div><div><div class="dtitle">CV / Resume</div><div class="dsub">Ahmed Saber 2026 &middot; PDF</div></div></a>
+    <a href="https://raw.githubusercontent.com/mido01020/mido01020.github.io/main/Certificates.pdf" class="dcard" target="_blank"><div class="dico">&#x1F3C5;</div><div><div class="dtitle">Certificates Bundle</div><div class="dsub">Professional Certificates &middot; PDF</div></div></a>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<a href="#" class="btt" id="btt">&#x2191;</a>
+
+<footer>
+  <strong>Ahmed Saber Saad</strong> &mdash; HSE Senior Coordinator<br>
+  <span style="color:#1E7F4F">Professional Digital Profile &middot; 2026</span>
+  <div class="flinks">
+    <a href="tel:+966544574813">&#x1F1F8;&#x1F1E6; +966 544 574 813</a>
+    <a href="mailto:Ahmed.hse@live.com">&#x2709; Ahmed.hse@live.com</a>
+    <a href="https://www.linkedin.com/in/AhmedSaber122" target="_blank">&#x1F517; LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════
+// MARQUEE DATA
+// ════════════════════════════════════════════
+var certs = [
+  // Each entry: { icon, name, sub, logoUrl }
+  // logoUrl = '' means use emoji fallback until you add the real logo URL
+  {icon:'&#x1F393;', name:'NEBOSH IGC',            sub:'International General Certificate',    logoUrl:'' /* ADD: NEBOSH logo URL */ },
+  {icon:'&#x1F30F;', name:'ISO 14001:2004',         sub:'Environmental Management System',      logoUrl:'' /* ADD: ISO logo URL */ },
+  {icon:'&#x1F3D7;', name:'OSHA Construction',      sub:'29 CFR 1926 Safety &amp; Health',      logoUrl:'' /* ADD: OSHA logo URL */ },
+  {icon:'&#x1F3ED;', name:'OSHA General Industry',  sub:'29 CFR 1910 Safety &amp; Health',      logoUrl:'' /* ADD: OSHA logo URL */ },
+  {icon:'&#x1F6A8;', name:'First Aid &amp; BLS',    sub:'Egyptian Red Crescent',                logoUrl:'' /* ADD: Red Crescent logo URL */ },
+  {icon:'&#x2622;',  name:'HAZMAT Training',         sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x26A0;',  name:'Hazard Communication',    sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x1F3D7;', name:'Scaffolding Safety',      sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x26A1;',  name:'Electrical Safety',       sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x1F525;', name:'Fire Safety',             sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x1F573;', name:'Confined Spaces Entry',   sub:'Humansoft / Kharafi National',         logoUrl:'' /* ADD: Humansoft logo URL */ },
+  {icon:'&#x1F9E0;', name:'Psychological Support',   sub:'Egyptian Red Crescent',                logoUrl:'' /* ADD: Red Crescent logo URL */ },
+  {icon:'&#x1F4CA;', name:'Risk Management',         sub:'Professional Certificate',             logoUrl:'' /* ADD: Issuing body logo URL */ },
+  {icon:'&#x1F6E1;', name:'OSH Advanced Diploma',    sub:'IASP',                                 logoUrl:'' /* ADD: IASP logo URL */ },
+];
+
+var companies = [
+  // Each entry: { icon, name, sub, logoUrl, linkedIn }
+  // ARCONS appears TWICE → merged into ONE entry with combined sub
+  {icon:'&#x1F3D9;', name:'Dar Al-Mimar (DMC)',        sub:'Mountain View I-City &middot; 2019–2026',              logoUrl:'' /* ADD: DMC logo URL */,        linkedIn:'https://www.linkedin.com/company/dmc-curve/' },
+  {icon:'&#x1F91D;', name:'CCC &amp; Hassan Allam JV', sub:'Mivida Boulevard &middot; 2018–2019',                  logoUrl:'' /* ADD: CCC/Hassan Allam logo */, linkedIn:'https://www.linkedin.com/company/hassan-allam-holding/' },
+  {icon:'&#x1F30A;', name:'Albayan / Taqah',           sub:'Al Kharj STP – KSA &middot; 2015–2018',               logoUrl:'' /* ADD: Albayan logo URL */,      linkedIn:'' },
+  {icon:'&#x1F9F1;', name:'Concorde Ready Mix',         sub:'Mall of Egypt &middot; 2013–2015',                    logoUrl:'' /* ADD: Concorde logo URL */,     linkedIn:'' },
+  {icon:'&#x1F3ED;', name:'Suez Steel Company',         sub:'Industrial Structures &middot; 2012–2013',            logoUrl:'' /* ADD: Suez Steel logo URL */,   linkedIn:'https://www.linkedin.com/company/suez-steel-company/' },
+  {icon:'&#x26A1;',  name:'Kharafi National',           sub:'Damietta Power Plants &middot; 2011–2012',            logoUrl:'' /* ADD: Kharafi logo URL */,      linkedIn:'https://www.linkedin.com/company/kharafi-national/' },
+  {icon:'&#x1F3E6;', name:'Orascom Construction',       sub:'BNP Paribas &amp; HDB &middot; 2008–2010',           logoUrl:'' /* ADD: Orascom logo URL */,      linkedIn:'https://www.linkedin.com/company/orascom-construction-plc/' },
+  // ARCONS merged — two projects combined
+  {icon:'&#x1F3DB;', name:'ARCONS',                     sub:'Abu Qir PP &middot; 2010–2011 | Saint Gobain &amp; El-Kureimat &middot; 2007–2008', logoUrl:'' /* ADD: ARCONS logo URL */, linkedIn:'https://www.linkedin.com/company/arab-contracting/' },
+];
+
+function buildMarquee(trackId, items, cls) {
+  var track = document.getElementById(trackId);
+  var all = items.concat(items); // duplicate for seamless loop
+  var html = '';
+  all.forEach(function(item) {
+    var logoHtml = item.logoUrl
+      ? '<img src="' + item.logoUrl + '" alt="' + item.name + '" style="width:100%;height:100%;object-fit:contain;border-radius:8px">'
+      : '<span class="fallback">' + item.icon + '</span>';
+    html += '<div class="mq-item ' + cls + '">'
+      + '<div class="mq-logo">' + logoHtml + '</div>'
+      + '<div class="mq-body"><div class="mq-name">' + item.name + '</div>'
+      + '<div class="mq-sub">' + item.sub + '</div></div>'
+      + '</div>';
+  });
+  track.innerHTML = html;
+}
+
+buildMarquee('certTrack', certs, 'mq-cert');
+buildMarquee('compTrack', companies, 'mq-comp');
+
+// ════════════════════════════════════════════
+// THEME TOGGLE
+// ════════════════════════════════════════════
+var isDark = true;
+document.getElementById('tBtn').onclick = function() {
+  isDark = !isDark;
+  document.body.className = isDark ? '' : 'light';
+  this.innerHTML = isDark ? '&#x1F319;' : '&#x2600;&#xFE0F;';
+};
+
+// ════════════════════════════════════════════
+// SCROLL REVEAL + BACK TO TOP
+// ════════════════════════════════════════════
+var rvList = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+var btt = document.getElementById('btt');
+
+function checkScroll() {
+  var wh = window.innerHeight;
+  var st = window.pageYOffset || document.documentElement.scrollTop;
+  var i = rvList.length;
+  while (i--) {
+    if (rvList[i].getBoundingClientRect().top < wh - 30) {
+      rvList[i].classList.add('in');
+      rvList.splice(i, 1);
+    }
+  }
+  if (st > 400) btt.classList.add('show');
+  else btt.classList.remove('show');
+}
+window.addEventListener('scroll', checkScroll, {passive:true});
+window.addEventListener('resize', checkScroll, {passive:true});
+setTimeout(checkScroll, 100);
+
+// ════════════════════════════════════════════
+// SKILL BARS
+// ════════════════════════════════════════════
+setTimeout(function() {
+  var bars = document.querySelectorAll('.sfill');
+  for (var i = 0; i < bars.length; i++) {
+    bars[i].style.width = bars[i].getAttribute('data-w') + '%';
+  }
+}, 800);
+
+// ════════════════════════════════════════════
+// COUNTERS
+// ════════════════════════════════════════════
+function count(id, end, sfx) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var s = null, dur = 1600;
+  (function step(ts) {
+    if (!s) s = ts;
+    var p = Math.min((ts - s) / dur, 1);
+    var e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(e * end) + sfx;
+    if (p < 1) requestAnimationFrame(step);
+  })(performance.now());
+}
+setTimeout(function() {
+  count('c1', 17, '+');
+  count('c2', 16, 'M+');
+  count('c3', 9, '');
+}, 500);
+</script>
+</body>
+</html>
